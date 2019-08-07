@@ -4,6 +4,7 @@ Updating another component based on changes made on some other component
 
 # Declaring an item as Observable in the service file (commonService.service.ts)
 private items: BehaviorSubject<any> = new BehaviorSubject<any>(this.data);
+  
 items$: Observable<any> = this.items.asObservable();
 
 Passing the values to the variable
