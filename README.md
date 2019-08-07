@@ -10,7 +10,7 @@ items$: Observable<any> = this.items.asObservable();
 Passing the values to the variable
 getData() {
     this.data = this.http.get('https://jsonplaceholder.typicode.com/todos/1');
-    this.items.next(this.data);
+    this.items.next(this.data); //Assign value to obeservable field
     return this.data;
 }
   
@@ -19,6 +19,7 @@ subscription: Subscription;
 
 ngOnInit() {
     this.subscription = this.commonService.items$.subscribe(items => this.items = items);
+    //Any change made to the field is noticed and applied to the variable (items)
 }
 
 ngOnDestroy() {
